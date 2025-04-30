@@ -2,7 +2,7 @@
 #include <iostream>
 #include <type_traits>
 
-// Реализация шаблонной функции для демонстрации размещаем здесь
+// Реализация шаблонной функции. Для демонстрации размещаем здесь
 template <ComplexConcept T>
 void process(const T& obj) {
     long hash_value = obj.hash();
@@ -62,11 +62,6 @@ int main() {
     // Демонстрируем работу функции process с ValidType
     std::cout << "\n======= Using process() with ValidType =======\n";
     process(valid);     // OK
-    
-    // Следующая строка вызовет ошибку компиляции, потому что InvalidType
-    // не удовлетворяет концепту ComplexConcept (имеет виртуальный деструктор)
-    // std::cout << "\n======= Using process() with InvalidType =======\n";
-    // process(invalid);  // Ошибка компиляции!
     
     return 0;
 }

@@ -15,18 +15,18 @@ add_executable(complex_concept_demo
 # Подключаем заголовочные файлы
 target_include_directories(complex_concept_demo PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
-# Опционально: Для более строгой компиляции
+# Для более строгой компиляции
 if(MSVC)
     target_compile_options(complex_concept_demo PRIVATE /W4)
 else()
     target_compile_options(complex_concept_demo PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
-# Включаем тестирование (если нужно)
+# Включаем тестирование 
 include(CTest)
 enable_testing()
 
-# Опционально: настройка упаковки
+# настройка упаковки
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
